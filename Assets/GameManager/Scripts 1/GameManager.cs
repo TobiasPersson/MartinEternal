@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    private int count = 0;
+    protected override void OnSceneChanged(Scene currentScene, Scene nextScene)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnWaveStarted(int enymiesspawnd){
+        count = enymiesspawnd;
     }
+
+    public void OnDeath(Fiende fiende){
+        count -= 1;
+        if(count == 0){
+            FindObjectOfType<Spawn_Enemies>().WaveCompleted();
+        }
+    }
+
 }
