@@ -17,19 +17,13 @@ public abstract class Health : MonoBehaviour, ITakeDamage
     private Color color; // The color of the object, used for things like damage values etc.
 
     public bool Alive { get { return HealthData.currentHealth > 0; } }
-
-    private Canvas canvas;
-    private new Camera camera;
     
-    private Vector3 damageNumberOffset = new Vector3(0, 1.3f, 0);
+    private Vector3 damageNumberOffset = new Vector3(0, 2f, 0);
 
     // Sets the HP to max when spawning
     protected virtual void Start()
     {
         HealthData.currentHealth = HealthData.maxHealth;
-
-        canvas = FindObjectOfType<Canvas>();
-        camera = Camera.main;
     }
 
     public virtual void TakeDamage(int amount)
@@ -42,12 +36,13 @@ public abstract class Health : MonoBehaviour, ITakeDamage
         // Creates a damage number at the objects screen position and sets its color to the objects color
         {
             GameObject _damageNumber = damageText.Get<PooledMonoBehaviour>().gameObject;
-            TextMeshProUGUI _damageText = _damageNumber.GetComponentInChildren<TextMeshProUGUI>();
+            TextMeshPro _damageText = _damageNumber.GetComponentInChildren<TextMeshPro>();
 
             //Position
-            _damageNumber.gameObject.transform.SetParent(canvas.transform, false);
+            _damageNumber.transform.position = this.transform.position + damageNumberOffset;
+            /*_damageNumber.gameObject.transform.SetParent(canvas.transform, false);
             (_damageNumber.transform as RectTransform).position = camera.WorldToScreenPoint(this.transform.position + damageNumberOffset);
-            _damageNumber.GetComponent<UIDamageNumber>().positionToHold = this.transform.position + damageNumberOffset;
+            _damageNumber.GetComponent<UIDamageNumber>().positionToHold = this.transform.position + damageNumberOffset;*/
 
             // Color
             _damageText.color = color;
