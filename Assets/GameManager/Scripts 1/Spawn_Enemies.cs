@@ -10,18 +10,30 @@ public class Spawn_Enemies : MonoBehaviour
     [SerializeField]
     private float timeLimit;
     [SerializeField]
-    private bool isWaveCleared = false;
-    void Update()
+    private bool isWaveCleared = true;
+    public int waveAmount = 0;
+    
+   private void Update()
     {
-        time += Time.deltaTime;
-        if(time >= timeLimit){
-            generateRandomEnemy();
-            time = 0;
+        if(isWaveCleared == true){
+            time += Time.deltaTime;
+            if(time >= timeLimit){
+                generateRandomEnemy();
+                time = 0;
+            }
         }
     }
 
-    public void generateRandomEnemy(){
-        for(int i = 0; i < 3; i++){  
+    public void WaveCompleted()
+    {
+        isWaveCleared = true;
+    }
+
+    public void generateRandomEnemy(){        
+        float waveMultiplier = Mathf.Pow(waveAmount+1, 2);
+        waveAmount =  Mathf.RoundToInt(waveAmount * waveMultiplier);
+
+        for(int i = 0; i < waveAmount; i++){  
         int enemy_random = Random.Range(0, enemyList_spawner.Count);
         int spawn_random = Random.Range(0, spawnPointsList_spawner.Count);
         
@@ -29,5 +41,7 @@ public class Spawn_Enemies : MonoBehaviour
 
         isWaveCleared = false;
         }
+
+        GameManager.Instance.OnWaveStarted(enemyList_spawner.Count);
     }
 }
