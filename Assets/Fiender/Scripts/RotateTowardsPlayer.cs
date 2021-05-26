@@ -10,11 +10,12 @@ public class RotateTowardsPlayer : MonoBehaviour
     [SerializeField]
     private bool targetIsPlayer = false;
 
-    private void Start()
+    private void Awake()
     {
         if (targetIsPlayer)
         {
             target = FindObjectOfType<PlayerMovement>().transform;
+            transform.LookAt(target);
         }
     }
 

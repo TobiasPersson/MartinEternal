@@ -11,6 +11,9 @@ public abstract class Health : MonoBehaviour, ITakeDamage
     public HealthData HealthData;
 
     [SerializeField]
+    private bool useDamageNumbers = true;
+
+    [SerializeField]
     private PooledMonoBehaviour damageText;
 
     [SerializeField]
@@ -33,7 +36,7 @@ public abstract class Health : MonoBehaviour, ITakeDamage
             return;
         }
 
-        // Creates a damage number at the objects screen position and sets its color to the objects color
+        if (useDamageNumbers) // Creates a damage number at the objects screen position and sets its color to the objects color
         {
             GameObject _damageNumber = damageText.Get<PooledMonoBehaviour>().gameObject;
             TextMeshPro _damageText = _damageNumber.GetComponentInChildren<TextMeshPro>();

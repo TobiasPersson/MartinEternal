@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedH: 4
-  fpsCam: {fileID: 0}
+  fpsCam: {fileID: 1470369071}
 --- !u!1 &1831875222
 GameObject:
   m_ObjectHideFlags: 0
