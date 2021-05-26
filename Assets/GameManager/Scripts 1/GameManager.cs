@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    private int count = 0;
+    public int count = 0;
     protected override void OnSceneChanged(Scene currentScene, Scene nextScene)
     {
         
@@ -19,7 +19,9 @@ public class GameManager : Singleton<GameManager>
         count -= 1;
         if(count == 0){
             FindObjectOfType<Spawn_Enemies>().WaveCompleted();
+            
         }
+        Debug.Log("THis has happened");
     }
 
 }
