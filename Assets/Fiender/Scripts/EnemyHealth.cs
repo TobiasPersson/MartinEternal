@@ -17,7 +17,7 @@ public class EnemyHealth : Health
 
     private void OnEnable()
     {
-        HealthData.maxHealth = enemy.EnemyData.MaxHealth + Mathf.RoundToInt(GameManager.Instance.WaveCount * enemy.EnemyData.HealthScaling);
+        //HealthData.maxHealth = enemy.EnemyData.MaxHealth + Mathf.RoundToInt(GameManager.Instance.WaveCount * enemy.EnemyData.HealthScaling);
         HealthData.currentHealth = HealthData.maxHealth;
     }
 
