@@ -11,6 +11,7 @@ public class Buttons : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("", LoadSceneMode.Single);
+        inGame = true;
     }
 
     //Options on top of current scene from main menu or pause menu
@@ -25,16 +26,18 @@ public class Buttons : MonoBehaviour
         Application.Quit();
     }
 
-    //Back to the start menu from the pause menu ad death menu
-    public void Home()
+    //Back to the start menu from the pause menu and death menu
+    public void MainMenu()
     {
-        SceneManager.LoadScene("", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        inGame = false;
     }
 
     //Unpausing the game and unloading pause menu
     public void Resume()
     {
-
+        SceneManager.UnloadSceneAsync("PauseMenu");
+        Time.timeScale = 1;
     }
 
     //Unload the options menu (either to pause or start menu from options)

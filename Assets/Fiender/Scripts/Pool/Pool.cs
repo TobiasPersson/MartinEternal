@@ -54,10 +54,10 @@ public class Pool : MonoBehaviour
     {
         for (int i = 0; i < poolPrefab.InitialPoolSize; i++) // We specify how big the pool of the prefab this script handles, and create that many disabled gameobjects, ready to be enabled whenever we want
         {
-            if (poolPrefab is Enemy) // Man ska va stolt över koden man skriver, även om det är hemsk bodge kod som inte skalar alls. Aja, det här är varför vi har basklasser 
+            /*if (poolPrefab is Enemy) // Man ska va stolt över koden man skriver, även om det är hemsk bodge kod som inte skalar alls. Aja, det här är varför vi har basklasser 
             {
                 MoneyManager.Instance.IgnoreAnotherCallPlease++;
-            }
+            }*/
 
             var pooledObject = Instantiate(poolPrefab) as PooledMonoBehaviour; 
             pooledObject.gameObject.name += " " + i; // Helps keeping track
