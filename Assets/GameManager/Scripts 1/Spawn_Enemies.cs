@@ -9,6 +9,8 @@ public class Spawn_Enemies : MonoBehaviour
     private float time = 0.0f;
     [SerializeField]
     private float timeLimit;
+    [SerializeField]
+    private bool isWaveCleared = false;
     void Update()
     {
         time += Time.deltaTime;
@@ -24,6 +26,8 @@ public class Spawn_Enemies : MonoBehaviour
         int spawn_random = Random.Range(0, spawnPointsList_spawner.Count);
         
         Instantiate(enemyList_spawner[enemy_random], spawnPointsList_spawner[spawn_random].transform.position, Quaternion.identity);
+
+        isWaveCleared = false;
         }
     }
 }
