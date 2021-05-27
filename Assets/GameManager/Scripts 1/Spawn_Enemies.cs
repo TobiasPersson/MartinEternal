@@ -9,10 +9,9 @@ public class Spawn_Enemies : MonoBehaviour
     private float time = 0.0f;
     [SerializeField]
     private float timeLimit;
-    [SerializeField]
     private bool isWaveCleared = true;
     public int waveAmount = 0;
-    
+    private GameManager gameManager;
    private void Update()
     {
         if(isWaveCleared == true){
@@ -23,16 +22,14 @@ public class Spawn_Enemies : MonoBehaviour
             }
         }
     }
-
     public void WaveCompleted()
     {
         isWaveCleared = true;
     }
 
     public void generateRandomEnemy(){        
-        float waveMultiplier = Mathf.Pow(waveAmount+1, 2);
-        waveAmount =  Mathf.RoundToInt(waveAmount * waveMultiplier);
-
+        waveAmount = Mathf.RoundToInt(Mathf.Pow(waveAmount, 2));
+        
         for(int i = 0; i < waveAmount; i++){  
         int enemy_random = Random.Range(0, enemyList_spawner.Count);
         int spawn_random = Random.Range(0, spawnPointsList_spawner.Count);
@@ -42,6 +39,6 @@ public class Spawn_Enemies : MonoBehaviour
         isWaveCleared = false;
         }
 
-        GameManager.Instance.OnWaveStarted(enemyList_spawner.Count);
+        GameManager.Instance.OnWaveStarted(waveAmount);
     }
 }
