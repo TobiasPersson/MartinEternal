@@ -7,6 +7,9 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class FiendeMovement : MonoBehaviour
 {
+    public event Action OnInRange = delegate { };
+    public event Action OnOutOfRange = delegate { };
+
     [SerializeField]
     private Transform target;
 
@@ -14,6 +17,8 @@ public class FiendeMovement : MonoBehaviour
     private float range = 1;
 
     private NavMeshAgent agent;
+
+    private bool moving = false;
 
     private void Start()
     {
@@ -24,9 +29,17 @@ public class FiendeMovement : MonoBehaviour
     {
         if (agent.pathStatus == NavMeshPathStatus.PathComplete)
         {
-            if (!InRange() && agent.isOnNavMesh)
+            if (!InRange())
             {
-                SetAgentPath();
+                if (agent.isOnNavMesh)
+                {
+                    SetAgentPath();
+                }
+            }
+            else if (moving)
+            {
+                moving = false;
+                OnInRange();
             }
         }
 
@@ -40,6 +53,9 @@ public class FiendeMovement : MonoBehaviour
         {
             print("Path set");
             agent.path = path;
+            moving = true;
+
+            OnOutOfRange();
         }
     }
 
