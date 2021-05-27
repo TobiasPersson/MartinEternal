@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speedH = 4.0f;
+    public float speedH = 10.0f;
     Rigidbody rb;
+    public GameObject meleeHitbox;
     private float yaw = 0.0f;
+    public float xValue;
+    public float yValue;
+    public Vector3 velocityValue;
+    public bool isMelee;
+    
 
     public Camera fpsCam;
     // Start is called before the first frame update
@@ -19,14 +25,42 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isMelee == false)
+        {
+            isMelee = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2) && isMelee == true)
+        {
+            isMelee = false;
+        }
         yaw += speedH * Input.GetAxis("Mouse X");
         transform.eulerAngles = new Vector3(0, yaw, 0);
 
-        rb.velocity = transform.forward * Input.GetAxis("Vertical") * 5 + transform.right * Input.GetAxis("Horizontal") * 5;
+        var x = Input.GetAxis("Horizontal");
+        var y = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        xValue = x;
+        yValue = y;
+
+        Vector3 velocity = rb.velocity = transform.forward * y * 5 + transform.right * x * 5;
+        velocityValue = velocity;
+
+
+        
+
+        if (FindObjectOfType<PlayerMovement>().isMelee == false)
         {
-            Shoot();
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Shoot();
+            }
+        }
+        else if (FindObjectOfType<PlayerMovement>().isMelee == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                StartCoroutine(Slash());
+            }
         }
     }
 
@@ -35,5 +69,13 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit);
         Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * 30, Color.green, 5);
+    }
+    
+    IEnumerator Slash()
+    {
+        meleeHitbox.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        meleeHitbox.SetActive(false);
+
     }
 }
