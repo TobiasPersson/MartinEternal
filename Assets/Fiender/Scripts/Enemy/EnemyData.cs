@@ -10,8 +10,8 @@ public class EnemyData : ScriptableObject
     public int Damage = 1;
     public float AttackSpeed = 1;
 
-    public float HealthScaling = 0.5f;
+    /*public float HealthScaling = 0.5f;
     public float DamageScaling = 0.5f;
     public float AttackSpeedScaling = 0.5f;
-    public float MovementSpeedScaling = 0.5f;
+    public float MovementSpeedScaling = 0.5f;*/
 }

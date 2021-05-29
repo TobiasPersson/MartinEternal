@@ -11,6 +11,6 @@ public class PlayerHealth : Health
 
     public override void Die()
     {
-        
+        print("Martin Died");
     }
 }
