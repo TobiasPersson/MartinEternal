@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7d6457b5b6bd449b657680b8fd0efb, type: 3}
   m_Name: Big Guy
   m_EditorClassIdentifier: 
-  MovementSpeed: 1
-  MaxHealth: 10
-  Damage: 1
-  AttackSpeed: 1
-  HealthScaling: 0.5
-  DamageScaling: 0.5
-  AttackSpeedScaling: 0.5
-  MovementSpeedScaling: 0.5
+  MovementSpeed: 30
+  MaxHealth: 400
+  Damage: 20
+  AttackSpeed: 5

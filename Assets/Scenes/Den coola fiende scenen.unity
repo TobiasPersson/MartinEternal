@@ -466,6 +466,7 @@ MonoBehaviour:
   useDamageNumbers: 0
   damageText: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
+  DeathParticles: {fileID: 0}
 --- !u!1 &1831875222
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +558,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2087002292 stripped
 GameObject:
@@ -587,13 +588,17 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1678047733}
+    - target: {fileID: 2087002293, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6652645793209111821, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
       propertyPath: m_Name
       value: Fiende MK.2
       objectReference: {fileID: 0}
     - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
       propertyPath: m_LocalPosition.x

@@ -2,6 +2,9 @@
 
 public class PlayerHealth : Health 
 {
+    [SerializeField]
+    private GameObject DeathParticles;
+
     public override void TakeDamage(int amount)
     {
         print("OW! The player took " + amount + " damage");
@@ -12,5 +15,7 @@ public class PlayerHealth : Health
     public override void Die()
     {
         print("Martin Died");
+        Instantiate(DeathParticles, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }
