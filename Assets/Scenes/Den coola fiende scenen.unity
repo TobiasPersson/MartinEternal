@@ -462,11 +462,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthData:
     currentHealth: 0
-    maxHealth: 5
+    maxHealth: 20
   useDamageNumbers: 0
   damageText: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
-  DeathParticles: {fileID: 0}
+  DeathParticles: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
 --- !u!1 &1831875222
 GameObject:
   m_ObjectHideFlags: 0
