@@ -34,6 +34,13 @@ public class FiendeHealth : Health
         }
     }
 
+    public override void TakeDamage(int amount)
+    {
+        base.TakeDamage(amount);
+
+        transform.position -= transform.forward * ((amount + 1) / 4.0f);
+    }
+
     public override void Die()
     {
         StartCoroutine(PlayDeathAnimation());

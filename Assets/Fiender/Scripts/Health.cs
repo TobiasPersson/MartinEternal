@@ -6,7 +6,7 @@ using TMPro;
 
 public abstract class Health : MonoBehaviour, ITakeDamage
 {
-    public event Action OnHealthChanged = delegate { };
+    public event Action<int, int> OnHealthChanged = delegate { };
 
     public HealthData HealthData;
 
@@ -60,7 +60,7 @@ public abstract class Health : MonoBehaviour, ITakeDamage
         HealthData.currentHealth -= amount;
         HealthData.currentHealth = Mathf.Clamp(HealthData.currentHealth, 0, HealthData.maxHealth); // There is no situation we want the players HP to be negative or above the max, for that we would use shields or extra HP if we want that mechanic
 
-        OnHealthChanged();
+        OnHealthChanged(HealthData.currentHealth, HealthData.maxHealth);
 
         if (HealthData.currentHealth == 0)
         {
@@ -74,7 +74,7 @@ public abstract class Health : MonoBehaviour, ITakeDamage
         HealthData.currentHealth += amount;
         HealthData.currentHealth = Mathf.Clamp(HealthData.currentHealth, 0, HealthData.maxHealth); // Again, we don't want to go over the max
 
-        OnHealthChanged();
+        OnHealthChanged(HealthData.currentHealth, HealthData.maxHealth);
     }
 
     public abstract void Die(); // Abstract because the player and enemies have a very different death sequence
