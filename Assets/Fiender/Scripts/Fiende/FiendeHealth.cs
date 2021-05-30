@@ -4,15 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Fiende))]
-public class EnemyHealth : Health
+public class FiendeHealth : Health
 {
-    public float DeathAnimationLength = 1; // So we never got a death animation, that's unfortunate
+    [SerializeField]
+    private PooledMonoBehaviour deathParticles;
+
+    public float DeathAnimationLength = 1;
 
     private Fiende enemy;
+    private Animator animator;
 
     private void Awake()
     {
         enemy = GetComponent<Fiende>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable()
@@ -25,7 +30,7 @@ public class EnemyHealth : Health
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            TakeDamage(1);
+            TakeDamage(2);
         }
     }
 
@@ -36,7 +41,12 @@ public class EnemyHealth : Health
 
     private IEnumerator PlayDeathAnimation()
     {
-        yield return new WaitForSeconds(0.01f);
+        animator.SetTrigger("Dö");
+        yield return new WaitForSeconds(DeathAnimationLength * 0.8f);
+
+        deathParticles.GetAtPosAndRot<PooledMonoBehaviour>(transform.GetChild(0).position, Quaternion.identity);
+
+        yield return new WaitForSeconds(DeathAnimationLength * 0.2f);
 
         gameObject.SetActive(false);
     }

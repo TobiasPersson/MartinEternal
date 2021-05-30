@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy/EnemyData", fileName = "New Enemy Data")]
-public class EnemyData : ScriptableObject
+[CreateAssetMenu(menuName = "Fiende/Fiende Data", fileName = "New Fiende Data")]
+public class FiendeData : ScriptableObject
 {
     public float MovementSpeed = 1;
 

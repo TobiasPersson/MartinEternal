@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Fiende : MonoBehaviour
 {
     [SerializeField]
-    public EnemyData EnemyData;
+    public FiendeData EnemyData;
     
     private NavMeshAgent agent;
 

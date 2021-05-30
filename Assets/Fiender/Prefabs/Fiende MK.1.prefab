@@ -200,7 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38b82c6db5d0bc4696a341656244348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   range: 3
 --- !u!114 &6796637105841481709
 MonoBehaviour:
@@ -220,6 +219,7 @@ MonoBehaviour:
   useDamageNumbers: 1
   damageText: {fileID: 4172791439540408158, guid: d142a6801aa48ed4a88f6b3827b8254d, type: 3}
   color: {r: 1, g: 0, b: 0, a: 1}
+  deathParticles: {fileID: -2064433873583320583, guid: bd5a7ae3e8bd4c8499f69e8e45138021, type: 3}
   DeathAnimationLength: 1
 --- !u!114 &1188036729434325159
 MonoBehaviour:
