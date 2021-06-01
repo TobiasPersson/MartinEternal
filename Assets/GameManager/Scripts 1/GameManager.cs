@@ -17,11 +17,23 @@ public class GameManager : Singleton<GameManager>
 
     public void OnDeath(Fiende fiende){
         count -= 1;
-        if(count == 0){
-            FindObjectOfType<Spawn_Enemies>().WaveCompleted();
-            
+        if(count == 0)
+        {
+            WabvComplete();
+
         }
         Debug.Log("THis has happened");
+    }
+
+    private void WabvComplete()
+    {
+        FindObjectOfType<Spawn_Enemies>().WaveCompleted();
+    }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.K)){
+            WabvComplete();
+        }
     }
 
 }

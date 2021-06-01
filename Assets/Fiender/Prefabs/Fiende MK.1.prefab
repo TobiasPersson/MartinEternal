@@ -165,6 +165,7 @@ MonoBehaviour:
   HealthData:
     currentHealth: 0
     maxHealth: 10
+  useDamageNumbers: 1
   damageText: {fileID: 4172791439540408158, guid: d142a6801aa48ed4a88f6b3827b8254d, type: 3}
   color: {r: 1, g: 0, b: 0, a: 1}
   DeathAnimationLength: 1
