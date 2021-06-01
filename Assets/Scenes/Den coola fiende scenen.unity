@@ -594,7 +594,6 @@ MonoBehaviour:
   yValue: 0
   velocityValue: {x: 0, y: 0, z: 0}
   isMelee: 0
-  fpsCam: {fileID: 1470369071}
 --- !u!114 &1678047736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,8 +792,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3634852720825954467, guid: 3ba395c686223234db9d666a0804deca, type: 3}
+      propertyPath: waveAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634852720825954467, guid: 3ba395c686223234db9d666a0804deca, type: 3}
       propertyPath: waveExponant
-      value: 1.05
+      value: 1.073
       objectReference: {fileID: 0}
     - target: {fileID: 3634852720825954467, guid: 3ba395c686223234db9d666a0804deca, type: 3}
       propertyPath: spawnPointsList_spawner.Array.size
