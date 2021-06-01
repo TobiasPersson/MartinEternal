@@ -129,6 +129,7 @@ Transform:
   m_Children:
   - {fileID: 295787998453614155}
   - {fileID: 2675626402740871614}
+  - {fileID: 8351655755569787569}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -187,6 +188,7 @@ MonoBehaviour:
   yValue: 0
   velocityValue: {x: 0, y: 0, z: 0}
   isMelee: 0
+  fpsCam: {fileID: 8351655756434416321}
 --- !u!23 &295787998909767341
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -682,3 +684,46 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &5861146322012257775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 295787998909767343}
+    m_Modifications:
+    - target: {fileID: 2500046653792571230, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500046653792571230, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.21890938
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500046653792571230, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01313455
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500046653792571230, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500046653792571230, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500046653792571230, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+--- !u!4 &8351655755569787569 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2500046653792571230, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+  m_PrefabInstance: {fileID: 5861146322012257775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &8351655756434416321 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2500046655328231214, guid: a3a25931e662a3d408ca180ea432a638, type: 3}
+  m_PrefabInstance: {fileID: 5861146322012257775}
+  m_PrefabAsset: {fileID: 0}
