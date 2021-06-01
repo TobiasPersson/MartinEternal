@@ -14,13 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public bool isMelee;
     
 
-    Camera fpsCam;
+    public Camera fpsCam;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        fpsCam = FindObjectOfType<Camera>();
+        //fpsCam = FindObjectOfType<Camera>();
     }
 
     // Update is called once per frame
