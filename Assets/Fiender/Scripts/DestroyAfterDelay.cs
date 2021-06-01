@@ -35,9 +35,8 @@ public class DestroyAfterDelay : MonoBehaviour
             if (timer >= destroyDelay)
             {
                 timer = 0;
-                transform.SetParent(poolParent.transform);
                 gameObject.SetActive(false);
-            }
+            }//Tog bort saker pog
         }
     }
 }
