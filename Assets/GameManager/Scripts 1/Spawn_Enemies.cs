@@ -11,6 +11,7 @@ public class Spawn_Enemies : MonoBehaviour
     private float timeLimit;
     private bool isWaveCleared = true;
     public int waveAmount = 0;
+    public float waveExponant = 1.02f;
     private GameManager gameManager;
    private void Update()
     {
@@ -28,7 +29,7 @@ public class Spawn_Enemies : MonoBehaviour
     }
 
     public void generateRandomEnemy(){        
-        waveAmount = Mathf.RoundToInt(Mathf.Pow(waveAmount, 2));
+        waveAmount = Mathf.RoundToInt(Mathf.Pow(waveAmount, waveExponant));
         
         for(int i = 0; i < waveAmount; i++){  
         int enemy_random = Random.Range(0, enemyList_spawner.Count);

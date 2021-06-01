@@ -55,6 +55,8 @@ public class FiendeHealth : Health
 
         yield return new WaitForSeconds(DeathAnimationLength * 0.2f);
 
+        GameManager.Instance.OnDeath(enemy);
+
         gameObject.SetActive(false);
     }
 }
