@@ -8,13 +8,13 @@ public class RotateTowardsPlayer : MonoBehaviour
     private Transform target;
 
     [SerializeField]
-    private bool targetIsPlayer = false;
+    private bool targetIsCamera = false;
 
     private void Awake()
     {
-        if (targetIsPlayer)
+        if (targetIsCamera)
         {
-            target = FindObjectOfType<PlayerMovement>().transform;
+            target = Camera.main.transform;
             transform.LookAt(target);
         }
     }
