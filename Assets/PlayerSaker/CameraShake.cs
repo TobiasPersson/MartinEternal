@@ -15,7 +15,7 @@ public class CameraShake : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (FindObjectOfType<PlayerMovement>().xValue !=0 || FindObjectOfType<PlayerMovement>().yValue != 0)
         {
