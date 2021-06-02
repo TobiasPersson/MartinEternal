@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ja
+  - PlayerHitBox
   layers:
   - Default
   - TransparentFX
