@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health 
 {
@@ -17,5 +18,7 @@ public class PlayerHealth : Health
         print("Martin Died");
         Instantiate(DeathParticles, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
+        SceneManager.LoadScene(2);
+
     }
 }
