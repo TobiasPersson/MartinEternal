@@ -191,13 +191,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 102481a76cfcef74581605fc18b87d07, type: 3}
   - {fileID: 8300000, guid: d06f4fc45dfcb804bb59d7ceff79c539, type: 3}
   - {fileID: 8300000, guid: 520f5682d1d661b4ab9fe83d66237c32, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 520f5682d1d661b4ab9fe83d66237c32, type: 3}
   - {fileID: 0}
   meleeHitbox: {fileID: 295787998453614152}
   xValue: 0
   yValue: 0
   velocityValue: {x: 0, y: 0, z: 0}
   isMelee: 0
+  coolDown: 0
   fpsCam: {fileID: 5887691651795295449}
 --- !u!23 &295787998909767341
 MeshRenderer:
@@ -470,7 +471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -237.27, y: -1.8500061}
+  m_AnchoredPosition: {x: -403, y: -1.8499756}
   m_SizeDelta: {x: 440.77, y: 219.8}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7646020874432143393
@@ -670,7 +671,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 500}
+  m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5979226385277765828
 CanvasRenderer:
@@ -727,8 +728,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7549f13229f1f924982a33c50b55ea94, type: 3}
   - {fileID: 21300000, guid: 9631e7fa17b1fd34cb73a78cdbd32294, type: 3}
   - {fileID: 21300000, guid: 95fc74ac22a64f840bf5c6b22654c287, type: 3}
-  amplitude: 500
-  frequency: 500
+  amplitude: 1000
+  frequency: 1000
 --- !u!95 &6267627163342878976
 Animator:
   serializedVersion: 3

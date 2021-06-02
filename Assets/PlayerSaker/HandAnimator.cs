@@ -25,13 +25,13 @@ public class HandAnimator : MonoBehaviour
     {
         if(FindObjectOfType<PlayerMovement>().isMelee == false)
         {
-            if (Input.GetKey(KeyCode.Mouse0))
-            {
-                handImage.sprite = handSprites[0];
-            }
-            else
+            if (FindObjectOfType<PlayerMovement>().coolDown == false) 
             {
                 handImage.sprite = handSprites[1];
+            }
+            else if(FindObjectOfType<PlayerMovement>().coolDown == true)
+            {
+                handImage.sprite = handSprites[0];
             }
         }
         else if(FindObjectOfType<PlayerMovement>().isMelee == true)

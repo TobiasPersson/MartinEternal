@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float yValue;
     public Vector3 velocityValue;
     public bool isMelee;
+    public bool coolDown;
     
 
     public Camera fpsCam;
@@ -44,58 +45,60 @@ public class PlayerMovement : MonoBehaviour
         var x = Input.GetAxis("Horizontal");
         var y = Input.GetAxis("Vertical");
 
+        Vector3 velocity = rb.velocity = transform.forward * y * moveSpeed + transform.right * x * moveSpeed;
+        velocityValue = velocity;
         xValue = x;
         yValue = y;
 
-        Vector3 velocity = rb.velocity = transform.forward * y * moveSpeed + transform.right * x * moveSpeed;
-        velocityValue = velocity;
 
 
-        
 
         if (FindObjectOfType<PlayerMovement>().isMelee == false)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0) && coolDown == false)
             {
-                Shoot();
+                StartCoroutine(burnout());
+                RaycastHit hit;
+                Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit);
+                Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 3);
+                var takeDamage = hit.collider.GetComponent<ITakeDamage>();
+                audio.clip = martinSounds[1];
+                audio.Play();
+                if (takeDamage != null)
+                {
+                    takeDamage.TakeDamage(3);
+                    audio.clip = martinSounds[0];
+                    audio.Play();
+                }
             }
         }
         else if (FindObjectOfType<PlayerMovement>().isMelee == true)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Slash();
+                StartCoroutine(Slash());
             }
-            else
-            {
-                DeactivatedSlash();
-            }
+            
         }
     }
 
-    void Shoot()
-    {
-        RaycastHit hit;
-        Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit);
-        Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 3);
-        var takeDamage = hit.collider.GetComponent<ITakeDamage>();
-        audio.clip = martinSounds[1];
-        audio.Play();
-        if(takeDamage != null)
-        {
-            takeDamage.TakeDamage(3);
-            audio.clip = martinSounds[0];
-            audio.Play();
-        }
-    }
     
-    void Slash()
+    
+    IEnumerator Slash()
     {
         meleeHitbox.SetActive(true);
+        audio.clip = martinSounds[3];
+        audio.Play();
+        yield return new WaitForSeconds(0.3f);
+        meleeHitbox.SetActive(false);
     }
 
-    void DeactivatedSlash()
+    IEnumerator burnout()
     {
-        meleeHitbox.SetActive(false);
+        //coolDown blir true, vilket hindrar fler skott från att avfyras.
+        coolDown = true;
+        //denna waitforseconds bestämmer hur länge coolDown är true, vilket i sin tur leder till en kontrollerad skottfrekvens.
+        yield return new WaitForSeconds(0.1f);
+        coolDown = false;
     }
 }
