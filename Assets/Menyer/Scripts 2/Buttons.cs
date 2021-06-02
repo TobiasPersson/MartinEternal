@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    bool inGame;
-
     //Start the game from start menu or restart the game from death menu
     public void Play()
     {
-        SceneManager.LoadScene("", LoadSceneMode.Single);
-        inGame = true;
+        SceneManager.LoadScene("Level", LoadSceneMode.Single);
     }
 
     //Options on top of current scene from main menu or pause menu
@@ -30,7 +27,6 @@ public class Buttons : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-        inGame = false;
     }
 
     //Unpausing the game and unloading pause menu
@@ -45,15 +41,4 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync("Options");
     }
-
-    //Pressing escape in the game (make a bool that is true when starting the game and false otherwise) opens the pause menu
-    public void Pause()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && inGame)
-        {
-            SceneManager.LoadScene("", LoadSceneMode.Additive);
-            Time.timeScale = 0;
-        }
-    }
-    
 }
