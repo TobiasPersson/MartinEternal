@@ -29,16 +29,18 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
+    //Unload the options menu
+    public void Back()
+    {
+        SceneManager.UnloadSceneAsync("Options");
+    }
+
+    /*
     //Unpausing the game and unloading pause menu
     public void Resume()
     {
         SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1;
     }
-
-    //Unload the options menu (either to pause or start menu from options)
-    public void Back()
-    {
-        SceneManager.UnloadSceneAsync("Options");
-    }
+    */
 }
