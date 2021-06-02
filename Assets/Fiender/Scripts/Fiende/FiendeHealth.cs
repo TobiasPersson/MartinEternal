@@ -59,4 +59,12 @@ public class FiendeHealth : Health
 
         gameObject.SetActive(false);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlayerHitBox"))
+        {
+            TakeDamage(6);
+        }
+    }
 }

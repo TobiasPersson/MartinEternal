@@ -69,7 +69,12 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit);
-        Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * 30, Color.green, 5);
+        Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 3);
+        var takeDamage = hit.collider.GetComponent<ITakeDamage>();
+        if(takeDamage != null)
+        {
+            takeDamage.TakeDamage(3);
+        }
     }
     
     IEnumerator Slash()
