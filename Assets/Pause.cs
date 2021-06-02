@@ -25,6 +25,10 @@ public class Pause : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Start()
+    {
+        ResumeGame();
+    }
     private void Update()
     {
         if (!GamePaused && Input.GetKeyDown(KeyCode.Escape))
