@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speedH = 10.0f;
+    public float moveSpeed;
     Rigidbody rb;
     public GameObject meleeHitbox;
     private float yaw = 0.0f;
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         xValue = x;
         yValue = y;
 
-        Vector3 velocity = rb.velocity = transform.forward * y * 5 + transform.right * x * 5;
+        Vector3 velocity = rb.velocity = transform.forward * y * moveSpeed + transform.right * x * moveSpeed;
         velocityValue = velocity;
 
 
