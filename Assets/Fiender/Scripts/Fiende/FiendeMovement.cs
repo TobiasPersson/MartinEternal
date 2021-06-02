@@ -47,7 +47,7 @@ public class FiendeMovement : MonoBehaviour
     private void SetAgentPath()
     {
         NavMeshPath path = new NavMeshPath();
-        agent.CalculatePath(player.position, path);
+        agent.CalculatePath(player.position - new Vector3(0, player.transform.localScale.y / 2, 0), path);
         if (path.status == NavMeshPathStatus.PathComplete)
         {
             print("Path set");
