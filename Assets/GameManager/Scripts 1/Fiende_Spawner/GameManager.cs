@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public int count = 0;
+
+    [Header("Player spawn point (optional)")]
     public Camera camera_Top_Down;
     public PlayerMovement player;
+
     protected override void OnSceneChanged(Scene currentScene, Scene nextScene)
     {
         
