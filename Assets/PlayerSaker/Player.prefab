@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 295787998909767336}
   - component: {fileID: 295787998909767341}
   - component: {fileID: -148804809542749799}
+  - component: {fileID: 9166649564862378840}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -245,6 +246,25 @@ CapsuleCollider:
   m_Height: 0.99999994
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9166649564862378840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295787998909767337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e4618658c1c7547981bd198e1e9d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthData:
+    currentHealth: 0
+    maxHealth: 100
+  useDamageNumbers: 1
+  damageText: {fileID: 4172791439540408158, guid: d142a6801aa48ed4a88f6b3827b8254d, type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  DeathParticles: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
 --- !u!1 &1059317049258123407
 GameObject:
   m_ObjectHideFlags: 0
