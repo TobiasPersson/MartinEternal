@@ -5,10 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speedH = 10.0f;
-    public float moveSpeed;
     Rigidbody rb;
-    AudioSource audio;
-    public AudioClip[] martinSounds;
     public GameObject meleeHitbox;
     private float yaw = 0.0f;
     public float xValue;
@@ -22,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        audio = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         //fpsCam = FindObjectOfType<Camera>();
     }
@@ -47,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         xValue = x;
         yValue = y;
 
-        Vector3 velocity = rb.velocity = transform.forward * y * moveSpeed + transform.right * x * moveSpeed;
+        Vector3 velocity = rb.velocity = transform.forward * y * 5 + transform.right * x * 5;
         velocityValue = velocity;
 
 
@@ -75,13 +71,9 @@ public class PlayerMovement : MonoBehaviour
         Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit);
         Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * hit.distance, Color.green, 3);
         var takeDamage = hit.collider.GetComponent<ITakeDamage>();
-        audio.clip = martinSounds[1];
-        audio.Play();
         if(takeDamage != null)
         {
             takeDamage.TakeDamage(3);
-            audio.clip = martinSounds[0];
-            audio.Play();
         }
     }
     
