@@ -64,7 +64,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                StartCoroutine(Slash());
+                Slash();
+            }
+            else
+            {
+                DeactivatedSlash();
             }
         }
     }
@@ -85,11 +89,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    IEnumerator Slash()
+    void Slash()
     {
         meleeHitbox.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        meleeHitbox.SetActive(false);
+    }
 
+    void DeactivatedSlash()
+    {
+        meleeHitbox.SetActive(false);
     }
 }

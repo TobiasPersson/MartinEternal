@@ -190,7 +190,7 @@ MonoBehaviour:
   martinSounds:
   - {fileID: 8300000, guid: 102481a76cfcef74581605fc18b87d07, type: 3}
   - {fileID: 8300000, guid: d06f4fc45dfcb804bb59d7ceff79c539, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 520f5682d1d661b4ab9fe83d66237c32, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   meleeHitbox: {fileID: 295787998453614152}
