@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Options.unity
     guid: 1d6a85fd16c29714ea47b6debb9cdcd4
   - enabled: 0
-    path: Assets/Scenes/PauseMenu.unity
+    path: 
     guid: a524d6f104b03f543a4fa1941f7dfd4f
   - enabled: 1
     path: Assets/Scenes/DeathMenu.unity
     guid: c6b80acb0743620499a6bdd689c0c8e9
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 2f6c8ba7c7550cb418573c638e68979d
   m_configObjects: {}
