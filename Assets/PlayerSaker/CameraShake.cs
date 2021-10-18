@@ -27,5 +27,10 @@ public class CameraShake : MonoBehaviour
             transform.position = FindObjectOfType<PlayerMovement>().transform.position;
             transform.rotation = FindObjectOfType<PlayerMovement>().transform.rotation;
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            transform.position = FindObjectOfType<PlayerMovement>().transform.position + new Vector3(Mathf.Cos(Time.time * frequency) * amplitude, 0, 0);
+        }
     }
 }
