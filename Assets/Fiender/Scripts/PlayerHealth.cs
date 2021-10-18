@@ -5,12 +5,14 @@ public class PlayerHealth : Health
 {
     [SerializeField]
     private GameObject DeathParticles;
+    public bool hasTakenDamage = false;
 
     public override void TakeDamage(int amount)
     {
         print("OW! The player took " + amount + " damage");
 
         base.TakeDamage(amount);
+        FindObjectOfType<CameraShake>().Shake(10f, 5f, 4f);
     }
 
     public override void Die()
@@ -21,4 +23,6 @@ public class PlayerHealth : Health
         SceneManager.LoadScene(2);
 
     }
+
+    
 }
