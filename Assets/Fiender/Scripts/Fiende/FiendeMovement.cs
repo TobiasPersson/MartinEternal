@@ -11,20 +11,20 @@ public class FiendeMovement : MonoBehaviour
     public event Action OnOutOfRange = delegate { };
 
     [SerializeField]
-    private float range = 1;
+    protected float range = 1;
 
-    private NavMeshAgent agent;
-    private Transform player;
+    protected NavMeshAgent agent;
+    protected Transform player;
 
-    private bool moving = false;
+    protected bool moving = false;
 
-    private void Start()
+    protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = FindObjectOfType<PlayerMovement>().transform;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (agent.pathStatus == NavMeshPathStatus.PathComplete)
         {
@@ -41,10 +41,9 @@ public class FiendeMovement : MonoBehaviour
                 OnInRange();
             }
         }
-
     }
 
-    private void SetAgentPath()
+    protected void SetAgentPath()
     {
         NavMeshPath path = new NavMeshPath();
         agent.CalculatePath(player.position - new Vector3(0, player.transform.localScale.y / 2, 0), path);
@@ -62,8 +61,13 @@ public class FiendeMovement : MonoBehaviour
         }
     }
 
-    private bool InRange()
+    protected bool InRange()
     {
         return Vector3.Distance(transform.position, player.position) < range;
+    }
+
+    protected void OnRangeIn()
+    {
+        OnInRange();
     }
 }
