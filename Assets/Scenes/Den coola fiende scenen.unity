@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,63 +240,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1233567635
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6652645793209111821, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_Name
-      value: Fiende MK.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 34.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773491538514283774, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
 --- !u!1 &1470369069
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,15 +589,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedH: 4
-  moveSpeed: 0
-  martinSounds: []
   meleeHitbox: {fileID: 0}
   xValue: 0
   yValue: 0
   velocityValue: {x: 0, y: 0, z: 0}
   isMelee: 0
-  coolDown: 0
-  fpsCam: {fileID: 0}
 --- !u!114 &1678047736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,10 +608,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthData:
     currentHealth: 0
-    maxHealth: 50
+    maxHealth: 20
   useDamageNumbers: 0
   damageText: {fileID: 0}
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 0}
   DeathParticles: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
 --- !u!1 &1706458728
 GameObject:
@@ -882,72 +821,3 @@ PrefabInstance:
       objectReference: {fileID: 1706458728}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ba395c686223234db9d666a0804deca, type: 3}
---- !u!1001 &7503570894836395621
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 33.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 18.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407932190905823377, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2610950452574464354, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: m_Name
-      value: Fiende MK.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754943964221725570, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754943964221725570, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754943964221725570, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}
-      propertyPath: color.r
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4b6842d92a86dc748b2c1a2e4ed93f90, type: 3}

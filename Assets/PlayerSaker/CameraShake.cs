@@ -8,7 +8,6 @@ public class CameraShake : MonoBehaviour
     public float frequency;
     Vector3 time = Vector3.zero;
     bool shouldShake;
-    float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,19 +27,5 @@ public class CameraShake : MonoBehaviour
             transform.position = FindObjectOfType<PlayerMovement>().transform.position;
             transform.rotation = FindObjectOfType<PlayerMovement>().transform.rotation;
         }
-        
-        
-
     }
-
-    public IEnumerator Shake(float freq, float amp, float time)
-    {
-        time -= Time.deltaTime;
-        if (time > 0)
-        {
-            transform.position = FindObjectOfType<PlayerMovement>().transform.position + new Vector3(Mathf.Sin(Time.time * freq) * amp, 0, 0);
-        }
-        yield return new WaitForSeconds(time);
-    }
-
 }

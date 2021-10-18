@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2087002294}
   - component: {fileID: 4798134565663172633}
   - component: {fileID: 2087002295}
+  - component: {fileID: 3036962812515723003}
   m_Layer: 0
   m_Name: Fiende Render
   m_TagString: Untagged
@@ -115,6 +116,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48daae8150fcf94eb1966d8be9510c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3036962812515723003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087002292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b489fdfb89c1f4699172208b2a0773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteCollection: {fileID: 11400000, guid: 67bdce84724e0ef469cd32e4891c0a0e, type: 2}
 --- !u!1 &6652645793209111821
 GameObject:
   m_ObjectHideFlags: 0
