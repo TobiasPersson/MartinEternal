@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1594ec80c9d19e64e8d854bb24c2fa18, type: 3}
+  m_Script: {fileID: 11500000, guid: eef41d041ac5653419bdfe2d2739ce42, type: 3}
   m_Name: EnemyMk1Sprites
   m_EditorClassIdentifier: 
   Sprites:
