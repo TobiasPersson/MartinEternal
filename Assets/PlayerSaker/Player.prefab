@@ -274,6 +274,7 @@ MonoBehaviour:
   damageText: {fileID: 4172791439540408158, guid: d142a6801aa48ed4a88f6b3827b8254d, type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
   DeathParticles: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
+  hasTakenDamage: 0
 --- !u!82 &6353839029993798491
 AudioSource:
   m_ObjectHideFlags: 0
@@ -283,7 +284,7 @@ AudioSource:
   m_GameObject: {fileID: 295787998909767337}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3358710020496841683, guid: 845007ee61f262e43a01176c079f5350, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
