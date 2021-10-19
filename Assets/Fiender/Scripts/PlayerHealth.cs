@@ -12,7 +12,7 @@ public class PlayerHealth : Health
         print("OW! The player took " + amount + " damage");
 
         base.TakeDamage(amount);
-        // FindObjectOfType<CameraShake>().Shake(10f, 5f, 4f);
+        FindObjectOfType<CameraShake>().Shake(10f, 5f, 4f);
     }
 
     public override void Die()
