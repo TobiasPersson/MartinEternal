@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "Vanlig J\xE4vel"
   m_EditorClassIdentifier: 
   MovementSpeed: 3
-  MaxHealth: 10
+  MaxHealth: 20
   Damage: 5
   AttackSpeed: 0.5

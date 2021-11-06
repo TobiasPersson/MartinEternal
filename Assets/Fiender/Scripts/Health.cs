@@ -29,7 +29,7 @@ public abstract class Health : MonoBehaviour, ITakeDamage
         HealthData.currentHealth = HealthData.maxHealth;
     }
 
-    public virtual void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount, bool knockback = true)
     {
         if (!Alive) // We don't want anything weird happening when the player is dead, ex. playing the damage sound with a gameover screen up
         {
@@ -62,9 +62,13 @@ public abstract class Health : MonoBehaviour, ITakeDamage
 
         OnHealthChanged(HealthData.currentHealth, HealthData.maxHealth);
 
+        if (knockback)
+        {
+            transform.position -= transform.forward * ((amount + 1) / 4.0f);
+        }
+
         if (HealthData.currentHealth == 0)
         {
-            //print(gameObject.name + " has died");
             Die();
         }
     }

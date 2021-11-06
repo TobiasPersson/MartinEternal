@@ -44,12 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList_spawner:
-  - {fileID: 6652645793209111821, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
+  - Enemy: {fileID: 7388451569933264188, guid: e60df4ca38f6adb499abf4252e28a7b8, type: 3}
+    Weight: 1
+  - Enemy: {fileID: 7388451569933264188, guid: ef71af76cda3f4e4caa6b66d314c482d, type: 3}
+    Weight: 0.1
   spawnPointsList_spawner:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -57,3 +56,4 @@ MonoBehaviour:
   time: 0
   timeLimit: 1
   waveAmount: 25
+  waveExponant: 1.02

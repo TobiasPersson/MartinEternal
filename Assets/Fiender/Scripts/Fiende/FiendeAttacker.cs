@@ -56,7 +56,7 @@ public class FiendeAttacker : MonoBehaviour
     private void FiendeMovement_OnInRange()
     {
         inRange = true;
-        timer =  (1.0f / fiende.EnemyData.AttackSpeed) * 0.9f;
+        timer =  (1.0f / fiende.EnemyData.AttackSpeed) * 0.5f;
     }
 
     private void AttackTrigger_OnAttackTrigger()
@@ -77,7 +77,7 @@ public class FiendeAttacker : MonoBehaviour
             var takeDamage = results[i].gameObject.GetComponent<ITakeDamage>();
             if (takeDamage != null)
             {
-                takeDamage.TakeDamage(fiende.EnemyData.Damage);
+                takeDamage.TakeDamage(fiende.EnemyData.Damage, false);
             }
         }
     }

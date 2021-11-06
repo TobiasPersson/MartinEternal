@@ -11,6 +11,9 @@ public class FiendeHealth : Health
 
     public float DeathAnimationLength = 1;
 
+    [SerializeField]
+    private SpriteRenderer healthBar;
+
     private Fiende enemy;
     private Animator animator;
 
@@ -18,6 +21,12 @@ public class FiendeHealth : Health
     {
         enemy = GetComponent<Fiende>();
         animator = GetComponentInChildren<Animator>();
+    }
+
+    public override void TakeDamage(int amount, bool knockback = true)
+    {
+        healthBar.material.SetFloat("_Cutoff", (float)HealthData.currentHealth / (float)HealthData.maxHealth);
+        base.TakeDamage(amount, knockback);
     }
 
     private void OnEnable()
@@ -32,13 +41,6 @@ public class FiendeHealth : Health
         {
             TakeDamage(2);
         }
-    }
-
-    public override void TakeDamage(int amount)
-    {
-        base.TakeDamage(amount);
-
-        transform.position -= transform.forward * ((amount + 1) / 4.0f);
     }
 
     public override void Die()

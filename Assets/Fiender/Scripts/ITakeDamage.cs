@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ITakeDamage
 {
-    void TakeDamage(int amount);
+    void TakeDamage(int amount, bool knockback = true);
 }
